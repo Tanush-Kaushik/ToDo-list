@@ -8,7 +8,8 @@ import { errorMiddleware } from './middlewares/errors.js';
 import cors from 'cors';
 
 export const app=express();
-app.use(cors())
+app.use(cors({credentials:true
+}))
 config({path:'./config.env'})
 
 app.use(express.urlencoded({extended:true}))
