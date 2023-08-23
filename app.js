@@ -8,7 +8,7 @@ import { errorMiddleware } from './middlewares/errors.js';
 import cors from 'cors';
 
 export const app=express();
-
+app.use(cors())
 config({path:'./config.env'})
 
 app.use(express.urlencoded({extended:true}))
@@ -16,7 +16,7 @@ app.use(express.json())
 app.use('/users',userRouter);
 app.use(cookieParser())
 app.use('/tasks',taskRouter)
-app.use(cors())
+
 
 
 mongoose.connect(process.env.MONGO_URI,{
