@@ -22,6 +22,12 @@ app.use(cors({
     credentials:true
 }))
 
+app.use(res.setHeader("Access-Control-Allow-Origin", "*");
+res.setHeader("Access-Control-Allow-Headers", "X-Requested-With"); 
+res.setHeader("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
+res.setHeader("X-Powered-By",' 3.2.1');
+res.setHeader("Content-Type", "application/json;charset=utf-8");)
+
 
 mongoose.connect(process.env.MONGO_URI,{
     dbName:'backendAPI'
